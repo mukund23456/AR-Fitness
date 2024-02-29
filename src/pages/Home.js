@@ -9,7 +9,10 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 import activityImgURL from "../assets/images/cookies.svg";
 import HomeHeader from "../components/header/HomeHeader.react";
 import { useNavigate } from "react-router-dom";
@@ -141,6 +144,8 @@ export const Home = () => {
     fetchQuotes();
   }, []);
 
+   
+  
   console.log(favExcerise);
 
   const [bicepsTime, setBicepsTime] = useState("");
@@ -336,11 +341,23 @@ export const Home = () => {
       },
     ],
   };
+  const [missingChip, setMissingChip] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleButtonClick = () => {
+    
+        setOpenDialog(true);
+        return;
+      }
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
   return (
     <>
       <HomeHeader donutCount={totalPoints} />
       {/* 3 Container Column */}
-      <Container
+      {/* <Container
         sx={{
           display: "flex",
           flexDirection: { lg: "row", sm: "column", xs: "column" },
@@ -349,7 +366,7 @@ export const Home = () => {
           gap: "1rem",
         }}
         maxWidth="false"
-      >
+      > */}
         {/* 3 Column */}
         <Box
           sx={{
@@ -390,7 +407,7 @@ export const Home = () => {
                   fontSize: { lg: "2rem", sm: "1.5rem", xs: "1rem" },
                 }}
               >
-                Welcome to AR FITNESS!
+                Welcome to AUG FIT !
               </Typography>
               <Typography
                 variant="h4"
@@ -410,11 +427,12 @@ export const Home = () => {
                   sx={{
                     width: { lg: "3rem", sm: "2rem", xs: "1.5rem" },
                     height: { lg: "3rem", sm: "2rem", xs: "1.5rem" },
+                    fontSize:{lg: "1.3rem", sm: "1rem", xs: "1rem"}
                   }}
                 />
                 {name}
               </Typography>
-              <Typography variant="body1" color="primary">
+              <Typography variant="body1" color="primary" sx={{fontSize:{lg: "1.3rem", sm: "1rem", xs: "1rem"}}}>
                 Staying active is key to a healthy lifestyle, and we're here to
                 support you every step of the way.
               </Typography>
@@ -432,7 +450,7 @@ export const Home = () => {
               flexWrap: "wrap",
             }}
           >
-            <Box
+            {/* <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -457,8 +475,8 @@ export const Home = () => {
                 }}
               >
                 Activity <AutoGraphOutlined />
-              </Typography>
-              <Box
+              </Typography> */}
+              {/* <Box
                 sx={{
                   display: "flex",
 
@@ -469,8 +487,8 @@ export const Home = () => {
                 }}
               >
                 <img src={activityImgURL} alt="Activity" width="100%" />
-              </Box>
-              <Box
+              </Box> */}
+              {/* <Box
                 sx={{
                   width: "100%",
                   display: "flex",
@@ -589,8 +607,8 @@ export const Home = () => {
                   </Button>
                 </Link>
               </Box>
-            )}
-            <Box
+            )} */}
+            {/* <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -633,7 +651,7 @@ export const Home = () => {
                   {quotes.content}
                 </Typography>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
           {/* Graph Box */}
           <Box
@@ -704,6 +722,7 @@ export const Home = () => {
                     variant="outlined"
                     sx={{
                       color: "#fff",
+                      marginBottom: '3rem',
                     }}
                   />
                   <Chip
@@ -712,6 +731,7 @@ export const Home = () => {
                     variant="outlined"
                     sx={{
                       color: "#fff",
+                      marginBottom: '3rem',
                     }}
                   />
                   <Chip
@@ -720,6 +740,7 @@ export const Home = () => {
                     variant="outlined"
                     sx={{
                       color: "#fff",
+                      marginBottom: '3rem',
                     }}
                   />
                   <Chip
@@ -728,6 +749,7 @@ export const Home = () => {
                     variant="outlined"
                     sx={{
                       color: "#fff",
+                      marginBottom: '3rem',
                     }}
                   />
                   <Chip
@@ -736,6 +758,7 @@ export const Home = () => {
                     variant="outlined"
                     sx={{
                       color: "#fff",
+                      marginBottom: '3rem',
                     }}
                   />
                   <Chip
@@ -744,8 +767,30 @@ export const Home = () => {
                     variant="outlined"
                     sx={{
                       color: "#fff",
+                      marginBottom: '3rem',
                     }}
                   />
+
+                  <Button onClick={handleButtonClick} variant="contained"
+              color="secondary"
+              sx={{
+                display: "flex",
+                gap: "0.5rem", 
+              }}>
+        Checked
+      </Button>
+      <Dialog open={openDialog} onClose={handleCloseDialog} sx={{ backgroundColor: 'rgba(31, 38, 135, 0.37)' }} className="glassmorphism">
+  <DialogTitle sx={{ backgroundColor: 'transparent' }}>All Stuff Checked !!</DialogTitle>
+  <DialogContent sx={{ backgroundColor: 'transparent' }}>
+    <b>Yeah ! You are Good to Go !! </b>
+  </DialogContent>
+  <DialogActions sx={{ backgroundColor: 'secondary.main' }}>
+    <Button onClick={handleCloseDialog} color="primary">
+      <b>OK</b>
+    </Button>
+  </DialogActions>
+</Dialog>
+
                 </Box>
               </Box>
             </Box>
@@ -753,7 +798,7 @@ export const Home = () => {
         </Box>
         {/* 2 Column */}
 
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -1006,10 +1051,9 @@ export const Home = () => {
               </Box>
             </Box>
           )}
-        </Box>
-      </Container>
+        </Box> */}
+      {/* </Container> */}
     </>
-  );
-};
-
+ );
+      };
 export default Home;

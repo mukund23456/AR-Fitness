@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../App.css";
 import { Link, useNavigate } from "react-router-dom";
-import LogoWithText from "../../assets/images/logo-with-text.svg";
+import LogoWithText from "../../assets/images/new_logo.PNG";
 import {
   Box,
   Container,
@@ -140,7 +140,7 @@ const HomeHeader = ({ props }) => {
               background: "primary",
             }}
           >
-            <IconButton
+            {/* <IconButton
               color="secondary"
               aria-label="open drawer"
               edge="start"
@@ -148,7 +148,7 @@ const HomeHeader = ({ props }) => {
               sx={{ mr: 2, display: { lg: "none" } }}
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Link to="/home">
               <Box
                 sx={{
@@ -175,31 +175,32 @@ const HomeHeader = ({ props }) => {
               }}
             >
               <a href="/bm" className="link">
-                <Button variant="h6">Measurements</Button>
+                <Button variant="h2" >Measurements</Button>
               </a>
               <a href="/diet" className="link">
-                <Button variant="h6">Diet</Button>
+                <Button variant="h2">Diet</Button>
               </a>
               <a href="/yoga" className="link">
-                <Button variant="h6">Yoga</Button>
+                <Button variant="h2">Yoga</Button>
               </a>
               <a href="/workout" className="link">
-                <Button variant="h6">Workout</Button>
+                <Button variant="h2" style={{ marginRight: 'auto' }}>Workout</Button>
               </a>
+             
               <Link to="/" className="link">
                 <Button
                   variant="contained"
                   color="secondary"
                   onClick={handleClick}
                 >
-                  Logout
+                  Log out
                 </Button>
               </Link>
             </Box>
           </Toolbar>
         </AppBar>
 
-        <Drawer
+        {/* <Drawer
           open={mobileOpen}
           onClose={handleDrawerToggle}
           sx={{
@@ -214,7 +215,7 @@ const HomeHeader = ({ props }) => {
           }}
         >
           {drawer}
-        </Drawer>
+        </Drawer> */}
       </Box>
     </>
   );

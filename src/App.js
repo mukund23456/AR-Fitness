@@ -17,7 +17,7 @@ import Trikonasana from "./components/trikonasana";
 import Workout from "./pages/Workout.react";
 import AdhoMukhaSvanasana from "./components/AdhoMukhaSvanasana";
 import { Container, Box, Typography } from "@mui/material";
-import logo from "./assets/images/logo-with-text.svg";
+import logo from "./assets/images/new_logo.PNG";
 import Diet from "./pages/Diet.react";
 
 import BicepCurls from "./components/BicepCurls";
@@ -29,7 +29,7 @@ import BodyMeasurmnets from "./pages/BodyMeasurements.react";
 function App() {
   const navigate = useNavigate();
   const location = window.location.pathname;
-  if (location === "/yoga" && location === "/bicepcurl") {
+  if (location === "/yoga" || location === "/bicepcurl") {
     const videoOutput = document.getElementsByClassName("input_video");
     const canvas = document.getElementsByClassName("output_canvas");
     videoOutput.style.display = "flex";
@@ -67,33 +67,34 @@ function App() {
       </Routes>
       {/* footer */}
       <Container
-        maxWidth="false"
-        sx={{
-          display: "flex",
-          justifyContent: {
-            lg: "space-between",
-            sm: "space-between",
-            xs: "center",
-          },
-          alignItems: "center",
-          height: "100%",
-          width: "100%",
-          flexDirection: { lg: "row", sm: "row", xs: "column" },
-          color: "#fff",
-          gap: { lg: "2rem", xs: "1rem" },
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: { lg: 0, xs: "1rem" },
-          }}
-        >
-          <img src={logo} alt="logo" width="60%" />
-        </Box>
+  maxWidth="true"
+  sx={{
+    display: "flex",
+    justifyContent: {
+      lg: "space-between",
+      sm: "space-between",
+      xs: "center",
+    },
+    alignItems: "center",
+    height: "100%",
+    width: "100%",
+    flexDirection: { lg: "row", sm: "row", xs: "column" },
+    color: "#fff",
+    gap: { lg: "2rem", xs: "1rem" },
+  }}
+>
+  <Box
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: { lg: 2, xs: "1rem" },
+      mb: "1rem", // add bottom margin to create space below the image
+    }}
+  >
+    <img src={logo} alt="logo" width="40%" style={{ marginTop: "2px", marginBottom: "2px" }} />
+  </Box>
         <Typography
           variant="h6"
           sx={{
@@ -102,9 +103,9 @@ function App() {
             textAlign: "center",
           }}
         >
-          © 2021{" "}
+          © 2024{" "}
           <a href="/" className="link">
-            <span style={{ color: "#F15C26" }}>AR FITNESS </span>
+            <span style={{ color: "#F15C26" }}>VISIONFIT </span>
           </a>
           All rights reserved.
         </Typography>

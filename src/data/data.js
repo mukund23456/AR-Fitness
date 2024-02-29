@@ -43,8 +43,9 @@ export const testimonial = [
     description:
       "As an active gym person, sometime it gets very difficult to count our reps on a particular heavy set that too keeping a good form, this project will help to counter the issue. Also the body tracking feature makes it even more accurate to work on our form.",
     role: "Weight Lifter",
-  },
+  }
 ];
+
 
 export const homePageDiet = [
   {

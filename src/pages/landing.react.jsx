@@ -174,7 +174,7 @@ const Landing = () => {
             }}
             className="text-gradient"
           >
-            Why AR Fitness?
+            Why AUG FIT?
           </Typography>
           <Typography
             variant="h6"
@@ -470,7 +470,7 @@ const Landing = () => {
                     height: "40px",
                   }}
                 >
-                  <img src={quotes} alt="quotes"></img>
+                  {/* <img src={quotes} alt="quotes"></img> */}
                 </Box>
                 <CardContent
                   sx={{
@@ -488,7 +488,7 @@ const Landing = () => {
                       height: "100px",
                     }}
                   >
-                    <img src={user} alt="user" width="100%" />
+                  <img src={user} alt="quotes" height={"100%"}></img>
                   </Box>
 
                   <Typography
@@ -503,7 +503,6 @@ const Landing = () => {
                   >
                     {item.name}
                   </Typography>
-
                   <Typography variant="body2" color="#fff" className="wrap">
                     {item.description}
                   </Typography>

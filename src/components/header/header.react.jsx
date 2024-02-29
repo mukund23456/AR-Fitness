@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LogoWithText from "../../assets/images/logo-with-text.svg";
+import LogoWithText from "../../assets/images/new_logo.PNG";
 
 const drawerWidth = 240;
 
@@ -38,7 +38,7 @@ const Header = () => {
           alignItems: "flex-start",
           gap: 1,
         }}
-      >
+      > 
         <Link to="/">
           <Box
             sx={{
@@ -61,7 +61,7 @@ const Header = () => {
             width: "60%",
           }}
         >
-          <Divider
+           <Divider
             color="#fff"
             sx={{
               width: "80%",
@@ -74,7 +74,7 @@ const Header = () => {
               </Button>
             </ListItemButton>
           </Link>
-        </List>
+        </List> 
       </Container>
       {/* Navbar */}
     </>
@@ -149,7 +149,7 @@ const Header = () => {
                   variant="contained"
                   color="secondary"
                   sx={{
-                    display: { lg: "none", xs: "flex", md: "flex", sm: "flex" },
+                    display: { lg: "none", xs: "none", md: "none", sm: "none" },
                     width: "100%",
                     fontSize: "15px",
                   }}
@@ -160,18 +160,19 @@ const Header = () => {
             </Box>
             <Box
               sx={{
-                display: { lg: "flex", xs: "none", md: "none", sm: "none" },
+                display: { lg: "flex", xs: "flex", md: "flex", sm: "flex" },
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 1,
                 textTransform: "capitalize",
                 color: "#ffffff",
+                whiteSpace: "nowrap",
               }}
             >
               <Link to="/login" className="link">
                 <Button variant="contained" color="secondary">
-                  SignIn
-                </Button>
+                  Sign In
+                </Button> 
               </Link>
             </Box>
           </Toolbar>

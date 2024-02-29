@@ -10,14 +10,22 @@ import { setDoc, doc, serverTimestamp, getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+//   authDomain: "ar-fitness3.firebaseapp.com",
+//   projectId: "ar-fitness3",
+//   storageBucket: "ar-fitness3.appspot.com",
+//   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_ID,
+//   appId: process.env.REACT_APP_FIREBASE_APP_ID,
+// };
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "ar-fitness3.firebaseapp.com",
-  projectId: "ar-fitness3",
-  storageBucket: "ar-fitness3.appspot.com",
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-};
+    apiKey: "AIzaSyBqRH-6h926cKs8z6daLI8qfCcZVzz4aQo",
+    authDomain: "augfit-b6391.firebaseapp.com",
+    projectId: "augfit-b6391",
+    storageBucket: "augfit-b6391.appspot.com",
+    messagingSenderId: "494968324515",
+    appId: "1:494968324515:web:ed1588bd3d471925229a16"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -54,7 +62,7 @@ export const signInWithGoogle = async () => {
   }
 };
 
-//   Logout Fucntion
+//   Logout Function
 export const logout = () => {
   signOut(auth);
   localStorage.clear();
